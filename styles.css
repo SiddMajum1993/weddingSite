@@ -203,6 +203,7 @@ ul {
   display: flex;
   justify-content: space-between;
   margin-top: -16rem;
+  z-index: 100;
 }
 
 .block-two_left {
@@ -235,3 +236,26 @@ ul {
   max-width: 100rem;
   height: 110rem;
 }
+/* Timeline */
+
+/* .story-timeline_wrapper{
+  margin:0;
+  padding:0;
+  overflow-x: hidden;
+  display:flex;
+  flex-wrap: nowrap;
+}
+.story-container{
+  width:100vw !important;
+  height:100vh !important;
+  flex-shrink: 0;
+}
+.red{
+  background-color: #e4002b;
+}
+.black{
+  background-color: #221e1f;
+}
+.orange{
+  background-color: #fa7c07;
+} */
