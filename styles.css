@@ -95,7 +95,7 @@ ul {
   top: calc(50% - 34rem);
   left: calc(50% - 63rem);
   text-align: center;
-  z-index: 10;
+  z-index: 1;
   padding: 0 5rem;
 }
 
@@ -132,7 +132,7 @@ ul {
   letter-spacing: normal;
   color: var(--fontColorPri);
   text-transform: uppercase;
-  z-index: 99;
+  z-index: 9;
 }
 
 /* Block One */
@@ -198,7 +198,7 @@ ul {
   display: flex;
   justify-content: space-between;
   margin-top: -16rem;
-  z-index: 100;
+  z-index: 1;
 }
 
 .block-two_left {
