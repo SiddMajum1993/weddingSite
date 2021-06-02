@@ -41,12 +41,10 @@ body {
 
 ul {
   list-style: none;
-  padding:0;
+  padding: 0;
 }
 .headerBlock .container {
   margin: 0 auto;
-  /* padding-left: 20px;
-  padding-right: 20px; */
 }
 
 .header-bock_wrapper {
@@ -79,10 +77,6 @@ ul {
 
 .menu li:last-child {
   margin-left: 4.3rem;
-}
-
-.header-block_logo {
-  /* display:flex; */
 }
 
 /* Hero */
@@ -138,6 +132,7 @@ ul {
   letter-spacing: normal;
   color: var(--fontColorPri);
   text-transform: uppercase;
+  z-index: 99;
 }
 
 /* Block One */
@@ -238,24 +233,45 @@ ul {
 }
 /* Timeline */
 
-/* .story-timeline_wrapper{
-  margin:0;
-  padding:0;
-  overflow-x: hidden;
-  display:flex;
-  flex-wrap: nowrap;
+.story-timeline{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
-.story-container{
-  width:100vw !important;
-  height:100vh !important;
+
+.story-timeline_wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.story-timeline_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.story-timeline-scroll_container{
+  position: absolute;
+  height: 100%;
+  will-change: transform;
+}
+.story-cards_style{
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.story-container {
+  position: relative;
   flex-shrink: 0;
 }
-.red{
-  background-color: #e4002b;
+
+.imageFit > img{
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
 }
-.black{
-  background-color: #221e1f;
-}
-.orange{
-  background-color: #fa7c07;
-} */

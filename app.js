@@ -39,40 +39,26 @@ tl.from(".block-one_image", {
   yPercent: 50,
 });
 
+/**
+ * The code below is inspired from (psssttt! cmd+c / cmd+v) : https://codepen.io/KhaledPen/pen/YzXeXLm
+ * Thanks to this amazing answer : https://stackoverflow.com/a/60627778
+ */
+const storyTimeline = document.querySelector('.story-timeline');
+const storyTimelineScrollContainer = document.querySelector('.story-timeline-scroll_container');
+storyTimeline.style.height = `${calcDynamicHeight(storyTimelineScrollContainer)}px`;
 
-// const sections = gsap.utils.toArray(".story-container");
-// let maxWidth = 0;
+function calcDynamicHeight(ref) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const objectWidth = ref.scrollWidth;
+  return objectWidth - vw + vh;
+}
 
-// const getMaxWidth = () => {
-//   maxWidth = 0;
-//   sections.forEach((section) => {
-//     maxWidth += section.offsetWidth;
-//   });
-// };
+window.addEventListener('scroll', () => {
+  const storyTimelineWrapper = document.querySelector('.story-timeline_wrapper');
+  storyTimelineScrollContainer.style.transform = `translateX(-${storyTimelineWrapper.offsetTop}px)`;
+});
 
-// getMaxWidth();
-// ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
-
-// gsap.to(sections, {
-//   x: () => `-${maxWidth - window.innerWidth}`,
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".story-timeline_wrapper",
-//     pin: true,
-//     scrub: true,
-//     end: () => `+=${maxWidth}`,
-//     invalidateOnRefresh: true
-//   }
-// });
-
-// sections.forEach((sct, i) => {
-//   ScrollTrigger.create({
-//     trigger: sct,
-//     start: () =>
-//       "top top-=" +
-//       (sct.offsetLeft - window.innerWidth / 2) *
-//         (maxWidth / (maxWidth - window.innerWidth)),
-//     end: () =>
-//       "+=" + sct.offsetWidth * (maxWidth / (maxWidth - window.innerWidth))
-//   });
-// });
+window.addEventListener('resize', () => {
+  storyTimeline.style.height = `${calcDynamicHeight(storyTimelineScrollContainer)}px`;
+});
